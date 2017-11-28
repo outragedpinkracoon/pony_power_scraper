@@ -1,0 +1,31 @@
+{
+  "statusCode": 200,
+  "headers": {
+    "server": "nginx",
+    "date": "Tue, 28 Nov 2017 17:14:40 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "content-length": "214620",
+    "x-frame-options": "SAMEORIGIN",
+    "x-xss-protection": "1; mode=block",
+    "x-content-type-options": "nosniff",
+    "etag": "W/\"994a172bfbd18bf518dc99a4cc67d606\"",
+    "cache-control": "max-age=0, private, must-revalidate, private",
+    "set-cookie": [
+      "cookieconsent=true; domain=.arnoldclark.com; path=/; expires=Wed, 28 Nov 2018 17:14:40 -0000",
+      "fontloaded=true; domain=.arnoldclark.com; path=/",
+      "_acdotcom_session=dk8vTkxJQi9BbmRxaEhXdHB6REticUE1dnNramVDZ0ZsUE9ldktCVzA1aFF5WEJrZmU0VFBBWjdTOEE2KzVYenBhWnROM0JIbzNURzBDMmVLaEZrSFJadVE1RXhhaTR3U3pQcHdNeXQ2alVqeEFYNXVEWCsrRzE3Y2U2Tnhyblg4YVRMV2sva0pBSmZ5QlVuR0NWRUhxeEdQa0hFdGNmTThVUENJejd1OXZlSklZb1ZWTFZoZXhwU1IwWUF4c1dOQWl5ZWswb3RSOFRiNk11SE9QU1o5T2FNN2xVMDMvSk5LVGJOS2hWR1lvcVpZVnFYS3VudEdRZm5DUVMwNVVEeHdpTGNnVEthU0d2elNoaGxONWVvMDVzYkQ0NTg0S0ZuRkwvU2ExRWpSSm1pcDZLOXlseFA4Q0hDVGQ4VTFINHNPaTM1MUIyN3BsLzIvS1N3YU55WVY3ZU1oUWNVcW13cEllYmRUbXpxeStrPS0tdkltNEpXWUkvYVEzekpIQnFNWHFpdz09--00710cae120621490a03df4f1e171eee9a5ad975; path=/; HttpOnly",
+      "SERVERID=; Expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/"
+    ],
+    "x-request-id": "f86599cc-f36d-45de-bbbd-54eda79d7a3b",
+    "x-runtime": "0.580698",
+    "x-app-server": "rails-cluster/mrlweb01.arnoldclark.com"
+  },
+  "url": "https://www.arnoldclark.com:443/used-cars/search?search_type=Used%20Cars&payment_type=cash&max_price=10000&location=Edinburgh%20EH17%2C%20UK&distance=100&photos_only=true&unreserved_only=true&transmission=Manual&mpg=50&mileage=10000&age=2&min_engine_size=1345&body_type%5B%5D=Hatchback&body_type%5B%5D=Estate&body_type%5B%5D=Saloon&body_type%5B%5D=SUV&body_type%5B%5D=People%20carrier&doors%5B%5D=5&seats%5B%5D=4&seats%5B%5D=5&seats%5B%5D=7&sort_order=price",
+  "time": 870,
+  "request": {
+    "method": "GET",
+    "headers": {
+      "host": "www.arnoldclark.com"
+    }
+  }
+}

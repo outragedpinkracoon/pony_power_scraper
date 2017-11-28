@@ -2,8 +2,8 @@
   "name": "pony_power",
   "version": "0.0.1",
   "description": "Scraper to get car data",
-  "main": "/app/arnold_clark/scraper.js",
-  "repository": "github.com/outragedpinkracoon/car_scraper",
+  "main": "/app/main.js",
+  "repository": "github.com/outragedpinkracoon/pony_power_scraper",
   "author": "Valerie Dryden",
   "license": "MIT",
   "private": false,
@@ -21,9 +21,9 @@
     "request-promise": "^4.2.2"
   },
   "scripts": {
-    "test": "VCR_MODE=playback mocha app/**/*.spec.js",
-    "vcr-record": "VCR_MODE=record mocha app/**/*.spec.js",
-    "vcr-cache": "VCR_MODE=cache mocha app/**/*.spec.js",
-    "start": "VCR_MODE=playback node app/main.js"
+    "test": "mocha app/**/*.spec.js",
+    "test-vcr": "VCR_MODE=cache npm test",
+    "start": "node app/main.js",
+    "start-vcr": "VCR_MODE=cache npm start"
   }
 }

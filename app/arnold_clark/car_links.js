@@ -1,5 +1,6 @@
 const rp = require('request-promise')
 const cheerio = require('cheerio')
+const root = 'https://www.arnoldclark.com'
 
 const retrieve = (url, numberOfCars) => {
   return new Promise(function(resolve, reject) {
@@ -15,7 +16,7 @@ const retrieve = (url, numberOfCars) => {
       const top5results = []
       for (let index = 0; index < numberOfCars; index++) {
         const href = $(links[index]).attr('href')
-        top5results.push(href)
+        top5results.push(`${root}${href}`)
       }
       return resolve(top5results)
     })

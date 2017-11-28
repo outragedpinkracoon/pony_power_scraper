@@ -1,0 +1,31 @@
+{
+  "statusCode": 200,
+  "headers": {
+    "server": "nginx",
+    "date": "Tue, 28 Nov 2017 17:14:39 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "content-length": "112901",
+    "x-frame-options": "SAMEORIGIN",
+    "x-xss-protection": "1; mode=block",
+    "x-content-type-options": "nosniff",
+    "etag": "W/\"075cb5c019477492b4f0d02267342a9a\"",
+    "cache-control": "max-age=0, private, must-revalidate, private",
+    "set-cookie": [
+      "cookieconsent=true; domain=.arnoldclark.com; path=/; expires=Wed, 28 Nov 2018 17:14:39 -0000",
+      "fontloaded=true; domain=.arnoldclark.com; path=/",
+      "_acdotcom_session=blpRbVFlR0QxQVJVazRMajkzT2VCUnFaeTVMaHVUbFBycWhlTi9HNnRDTTgyRkJraEp3VjBtdUJSNkxnYVR6aGYzRXRIUUtyU3Q4VDNDNzduWUt2OUhyNXZDeVlBSGFScnhxdmVmbTYvUWN4YjdKMktiUmxqT0xTZHd4Y2xTK0xMMmxmUkwybFNLTHdxQVBjZG1aS0J1MW5GUks4eEdjQlAzYm9nNjV1MUJTRCt5b0tEbUcrelptTmYxQUU2YzN6SFZRYWlWbHllelVOamNXdndTMStHRXpENWYxQTlxY2ZHODhJV2RzUkVzSnNnQU81a2N2Z2dGdG1ZYjhmcmV5M1I2SUJpN0RSc0xlQVFSQ3NyNzJKaWxYaStycnZrRkJIMTJiWEk3SFBvclhTZFl4VzFhNFcxYWdWd3RxMGs4SG1rcGFTUG5zamtZc05yaVJhbzZrcUhGVWRrVm5SanJjSk5IMWtROVl6ZFk0PS0tMlBrR0xIbExDNU5QSWFQRjFrMGNUZz09--f7cea965798d42a275dc2a7ace6cd48306bbd208; path=/; HttpOnly",
+      "SERVERID=; Expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/"
+    ],
+    "x-request-id": "4c109563-609b-4cdf-a2c5-ff835c3fad9a",
+    "x-runtime": "0.424228",
+    "x-app-server": "rails-cluster/mrlweb06.arnoldclark.com"
+  },
+  "url": "https://www.arnoldclark.com:443/used-cars/vauxhall/corsa/1-4-ecoflex-sri-5dr/2016/ref/arnbn-u-15074",
+  "time": 818,
+  "request": {
+    "method": "GET",
+    "headers": {
+      "host": "www.arnoldclark.com"
+    }
+  }
+}
