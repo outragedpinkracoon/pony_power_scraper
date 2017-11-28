@@ -2,7 +2,7 @@
   "name": "pony_power",
   "version": "0.0.1",
   "description": "Scraper to get car data",
-  "main": "app.js",
+  "main": "/app/arnold_clark/scraper.js",
   "repository": "github.com/outragedpinkracoon/car_scraper",
   "author": "Valerie Dryden",
   "license": "MIT",
