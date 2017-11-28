@@ -11,7 +11,7 @@ describe('Car Links', function() {
   describe('#retrieve()', function() {
     it('should return a list of 5 car urls', function() {
       return carLinks.retrieve(
-        urls.usedCarsIndex()
+        urls.usedCarsIndex(), 5
       ).should.eventually.have.length(5)
     })
   })
