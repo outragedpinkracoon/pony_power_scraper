@@ -1,5 +1,6 @@
 const chai = require('chai')
 const chaiAsPromised = require('chai-as-promised')
+require('sepia')
 
 chai.use(chaiAsPromised)
 chai.should()

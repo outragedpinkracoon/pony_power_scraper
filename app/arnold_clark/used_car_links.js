@@ -14,7 +14,7 @@ const url = () => {
     '&unreserved_only=true',
     '&transmission=Manual',
     '&mpg=50',
-    '&mileage=50000',
+    '&mileage=10000',
     '&age=2',
     '&min_engine_size=1545',
     '&body_type%5B%5D=Hatchback',
@@ -23,7 +23,7 @@ const url = () => {
     '&body_type%5B%5D=SUV',
     '&body_type%5B%5D=People%20carrier',
     '&doors%5B%5D=5',
-    '&sort_order=mileage'
+    '&sort_order=price'
   ]
 
   return `${root}${params.join('')}`
