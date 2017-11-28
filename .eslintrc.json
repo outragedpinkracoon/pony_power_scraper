@@ -12,6 +12,8 @@
 				"max": 1,
 				"maxEOF": 1
 			}
-		]
+		],
+		"comma-dangle": "off",
+		"object-curly-spacing": "off"
 	}
 }
