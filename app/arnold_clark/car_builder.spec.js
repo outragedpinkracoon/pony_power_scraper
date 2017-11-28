@@ -31,5 +31,15 @@ describe('Car Builder', function() {
       return carBuilder.scrape(url).should.eventually.deep.eq(expectedCarData)
     })
   })
+
+  context('when the road tax is not applicable', function() {
+    const url = 'https://www.arnoldclark.com/nearly-new-cars/vauxhall/corsa/1-4-design-5dr/2016/ref/arnay-u-101905'
+    const expectedCarData = {
+      'roadTax': 0,
+    }
+    it('returns the correct car details', function() {
+      return carBuilder.scrape(url).should.eventually.include(expectedCarData)
+    })
+  })
 })
 

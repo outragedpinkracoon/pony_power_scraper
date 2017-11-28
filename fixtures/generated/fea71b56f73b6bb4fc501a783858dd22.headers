@@ -1,0 +1,31 @@
+{
+  "statusCode": 200,
+  "headers": {
+    "server": "nginx",
+    "date": "Tue, 28 Nov 2017 17:24:30 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "content-length": "88154",
+    "x-frame-options": "SAMEORIGIN",
+    "x-xss-protection": "1; mode=block",
+    "x-content-type-options": "nosniff",
+    "etag": "W/\"c53f0537a0b961cd150de3f6f811e0c6\"",
+    "cache-control": "max-age=0, private, must-revalidate, private",
+    "set-cookie": [
+      "cookieconsent=true; domain=.arnoldclark.com; path=/; expires=Wed, 28 Nov 2018 17:24:30 -0000",
+      "fontloaded=true; domain=.arnoldclark.com; path=/",
+      "_acdotcom_session=MGFxUjAyaHJZUCtzSk11MlA1cHFMOUtaS3pmSk1XY1RnNmNSQ29jRXA2YWQxbTJ0a2FyS0FuOXRVQUkyN2NJTFkyNDQxSFFHOUhqY0xIQi95cmRuekRITzQwNnZLUVJsRlBrbzhJcjZtUllmaU1OeXZRekFDTWlkekVSckRxT1pHV0ZrRGVDUkt3K1NjTUNXR2YvSk5DWUlRWmV6VlpocVAxN2NCQVpIZzRnYkxMd3BPMlZGcFhMRjFCUHJsNm0vZ0l3YVd0K3Jod2dMdTUwUU81VWI5NTZaWGV5UUx6cExaNzNIa3BiaytmRW96T1ZlNkRCTnlTYkZtSVQxMFRjTklDbjFwWTJ6R3hXQWJZNFVYc2s4bmpxUjhIL252aGNQN3Z5T3lxMklwa2xROGYzMXR2K1pDZ0o3d1VORDJ4N2pkM3FHS3JDcXFVZU00cmE2QnRxQUJRaHEzb3Z1dWpqTitDdmtqdm91NzI4PS0tK2JUQ3ZtS0VGdGRJdWxoVDhKeThmUT09--d768851d275dca7aad0898270b1d8eb37abd3f80; path=/; HttpOnly",
+      "SERVERID=; Expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/"
+    ],
+    "x-request-id": "0bfbc282-bdbf-4d7e-8bdf-2566c178c5f6",
+    "x-runtime": "0.267454",
+    "x-app-server": "rails-cluster/prdweb02.arnoldclark.com"
+  },
+  "url": "https://www.arnoldclark.com:443/nearly-new-cars/vauxhall/corsa/1-4-design-5dr/2016/ref/arnay-u-101905",
+  "time": 610,
+  "request": {
+    "method": "GET",
+    "headers": {
+      "host": "www.arnoldclark.com"
+    }
+  }
+}

@@ -61,11 +61,12 @@ const price = ($) => {
 }
 
 const roadTax = ($) => {
-  return parseInt(
+  const parsed = parseInt(
     productSummary($, 'Road tax')
       .replace(' per year', '')
       .replace('£', '')
   )
+  return isNaN(parsed) ? 0 : parsed
 }
 
 const seats = ($) => {
