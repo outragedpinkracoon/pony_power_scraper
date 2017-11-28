@@ -1,17 +1,17 @@
 const request = require('request')
 const cheerio = require('cheerio')
 
-const carLinks = (url) => {
+const run = (url, callback) => {
   request(url, (error, response, html) => {
     if (!error) {
       const $ = cheerio.load(html)
       const links = $('.ac-vehicle__title a')
-      const pick5 = []
+      const top5results = []
       for (let index = 0; index < 5; index++) {
         const href = $(links[index]).attr('href')
         pick5.push(href)
       }
-      console.log(pick5)
+      callback(top5results)
     }
   })
 }
@@ -44,5 +44,5 @@ const buildUrl = () => {
 }
 
 module.exports = {
-  buildUrl
+  run, buildUrl
 }
