@@ -1,15 +1,14 @@
 const chai = require('chai')
-const chaiAsPromised = require('chai-as-promised')
+require('chai')
 require('sepia')
 
-chai.use(chaiAsPromised)
-chai.should()
+const expect = chai.expect
 
 const usedCarLinks = require('./used_car_links')
 
 describe('Car Links', function() {
   describe('#retrieve()', function() {
-    it('should return a list of 5 car urls', function() {
+    it('should return a list of 5 car urls', async function() {
       const expectedResults = [
         'https://www.arnoldclark.com/nearly-new-cars/mg/mg3/1-5-vti-tech-3style-5dr-start-stop/2017/ref/arnfz-u-18892',
         'https://www.arnoldclark.com/nearly-new-cars/vauxhall/corsa/1-4-design-5dr/2016/ref/arnay-u-101905',
@@ -17,7 +16,8 @@ describe('Car Links', function() {
         'https://www.arnoldclark.com/used-cars/vauxhall/corsa/1-4-ecoflex-sri-5dr/2016/ref/arnbn-u-15074',
         'https://www.arnoldclark.com/nearly-new-cars/dacia/sandero/1-5-dci-ambiance-5dr/2017/ref/cc_j3l0u689clo9else'
       ]
-      return usedCarLinks.scrape().should.eventually.deep.eq(expectedResults)
+      const result = await usedCarLinks.scrape()
+      expect(result).to.deep.eq(result)
     })
   })
 })
