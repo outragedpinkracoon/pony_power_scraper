@@ -4,15 +4,12 @@ const chaiAsPromised = require('chai-as-promised')
 chai.use(chaiAsPromised)
 chai.should()
 
-const carLinks = require('./car_links')
-const urls = require('./urls')
+const usedCarLinks = require('./used_car_links')
 
 describe('Car Links', function() {
   describe('#retrieve()', function() {
     it('should return a list of 5 car urls', function() {
-      return carLinks.retrieve(
-        urls.usedCarsIndex(), 5
-      ).should.eventually.have.length(5)
+      return usedCarLinks.scrape().should.eventually.have.length(5)
     })
   })
 })
