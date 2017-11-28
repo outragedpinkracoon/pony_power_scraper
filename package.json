@@ -9,13 +9,15 @@
   "private": false,
   "devDependencies": {
     "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
     "eslint": "^4.12.0",
     "eslint-config-google": "^0.9.1",
     "mocha": "^4.0.1"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
-    "request": "^2.83.0"
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
   },
   "scripts": {
     "test": "mocha app/**/*.spec.js"

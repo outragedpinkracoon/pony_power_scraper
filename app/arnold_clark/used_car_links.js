@@ -1,18 +1,24 @@
-const request = require('request')
+const rp = require('request-promise')
 const cheerio = require('cheerio')
 
-const run = (url, callback) => {
-  request(url, (error, response, html) => {
-    if (!error) {
-      const $ = cheerio.load(html)
+const run = (url) => {
+  return new Promise(function(resolve, reject) {
+    const options = {
+      uri: url,
+      transform: (body) => {
+        return cheerio.load(body)
+      }
+    }
+
+    rp(options).then(($) => {
       const links = $('.ac-vehicle__title a')
       const top5results = []
       for (let index = 0; index < 5; index++) {
         const href = $(links[index]).attr('href')
-        pick5.push(href)
+        top5results.push(href)
       }
-      callback(top5results)
-    }
+      return resolve(top5results)
+    })
   })
 }
 
@@ -46,3 +52,5 @@ const buildUrl = () => {
 module.exports = {
   run, buildUrl
 }
+
+// run(buildUrl()).then((res) => console.log('hi'+res))
