@@ -22,7 +22,8 @@
   },
   "scripts": {
     "test": "VCR_MODE=playback mocha app/**/*.spec.js",
-    "vcr-record": "VCR_MODE=record npm test",
-    "vcr-cache": "VCR_MODE=cache npm test"
+    "vcr-record": "VCR_MODE=record mocha app/**/*.spec.js",
+    "vcr-cache": "VCR_MODE=cache mocha app/**/*.spec.js",
+    "start": "VCR_MODE=playback node app/main.js"
   }
 }

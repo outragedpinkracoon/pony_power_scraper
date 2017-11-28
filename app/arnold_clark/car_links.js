@@ -10,19 +10,18 @@ const retrieve = (url, numberOfCars) => {
       }
     }
 
-    rp(options)
-      .then(($) => {
-        const links = $('.ac-vehicle__title a')
-        const top5results = []
-        for (let index = 0; index < numberOfCars; index++) {
-          const href = $(links[index]).attr('href')
-          top5results.push(href)
-        }
-        return resolve(top5results)
-      })
-      .catch((err) => {
-        reject(err)
-      })
+    rp(options).then(($) => {
+      const links = $('.ac-vehicle__title a')
+      const top5results = []
+      for (let index = 0; index < numberOfCars; index++) {
+        const href = $(links[index]).attr('href')
+        top5results.push(href)
+      }
+      return resolve(top5results)
+    })
+    .catch((err) => {
+      reject(err)
+    })
   })
 }
 
