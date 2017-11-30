@@ -1,0 +1,31 @@
+{
+  "statusCode": 200,
+  "headers": {
+    "server": "nginx",
+    "date": "Thu, 30 Nov 2017 13:23:57 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "content-length": "111864",
+    "x-frame-options": "SAMEORIGIN",
+    "x-xss-protection": "1; mode=block",
+    "x-content-type-options": "nosniff",
+    "etag": "W/\"28f2c8e44fac64efba8ec9fafb5c155e\"",
+    "cache-control": "max-age=0, private, must-revalidate, private",
+    "set-cookie": [
+      "cookieconsent=true; domain=.arnoldclark.com; path=/; expires=Fri, 30 Nov 2018 13:23:57 -0000",
+      "fontloaded=true; domain=.arnoldclark.com; path=/",
+      "_acdotcom_session=T2RSU1hGVmNMRlcxNDFLc3BtbkpTcmM2aWwrbDVWa2VnaStlQUY2VWlnR1JXOFRPRCtXdW9nZ2o1WUJMT1FuSXJHUmZBSmE3L2sram53b00vVW9NQzlRTjVQN044WG1SL1E1Vmd4UWZWM1hQYWY0VmpMM1hURmY0YnJyMlNUSzdiUUlzVHBmU2kyb0EzMVRTVkdZNTc1TTNERURpK1dFRHRTZTF5c2cvZlBYSDQ3elRUbzhCS2dicEhwS2lFSFpkTFc1d1VnMW1pbGFSd29Ddmk1TjRPN3NHRTRNdER1SGE2U0I2WjZibWxYUW5Eb0dXSlVQa0RwcWVENGZEaTJwck5tQUdST2hVMFFkd3RWM0xrOEg4WVgzQ2dUcFcvWUp4OFk2bW9nOVk3UjJyOFVtNDZSSXJpSlFzaEx2a3FGV21PYndmakd5Wkw5clRmMzdhcW1oLzEzWGZMdkR4YmFiR1VCeVdLMC9OOVlJPS0tcld6Tm1nQzJwSjNraUFWN205dFlHQT09--ca04d3759a089e3e0c895ded3d75c739ac3bfd16; path=/; HttpOnly",
+      "SERVERID=; Expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/"
+    ],
+    "x-request-id": "a687e4e3-1821-42ac-addc-59d8001a1966",
+    "x-runtime": "0.392163",
+    "x-app-server": "rails-cluster/mrlweb04.arnoldclark.com"
+  },
+  "url": "https://www.arnoldclark.com:443/used-cars/citroen/c3-picasso/1-6-bluehdi-edition-5dr/2016/ref/arnez-u-13815",
+  "time": 595,
+  "request": {
+    "method": "GET",
+    "headers": {
+      "host": "www.arnoldclark.com"
+    }
+  }
+}

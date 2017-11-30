@@ -17,7 +17,7 @@ describe('Car Links', function() {
         'https://www.arnoldclark.com/nearly-new-cars/dacia/sandero/1-5-dci-ambiance-5dr/2017/ref/cc_j3l0u689clo9else'
       ]
       const result = await usedCarLinks.scrape()
-      expect(result).to.deep.eq(result)
+      expect(result).to.deep.eq(expectedResults)
     })
   })
 })
