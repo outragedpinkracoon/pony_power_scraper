@@ -29,12 +29,12 @@ describe('Car Builder', function() {
       expect(result).to.deep.eq(expectedCarData)
     })
 
-    context('when the road tax is not applicable', function () {
+    context('when the road tax is not applicable', function() {
       const url = 'https://www.arnoldclark.com/nearly-new-cars/vauxhall/corsa/1-4-design-5dr/2016/ref/arnay-u-101905'
       const expectedCarData = {
         'roadTax': 0,
       }
-      it('returns the correct car details', async function () {
+      it('returns the correct car details', async function() {
         let result = await carBuilder.scrape(url)
         expect(result).to.include(expectedCarData)
       })

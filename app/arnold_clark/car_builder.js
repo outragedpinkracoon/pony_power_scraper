@@ -53,6 +53,7 @@ const image = ($) => {
 }
 
 const price = ($) => {
+  debugger
   let price = $('.ac-money').first().text()
   return parseInt(
     price.replace('£', '')
