@@ -1,23 +1,4 @@
-const cheerio = require('cheerio')
-const rp = require('request-promise')
-
-const scrape = async (carUrl) => {
-  $ = await carRequest(carUrl)
-  return buildCar($, carUrl)
-}
-
-const carRequest = (carUrl) => {
-  const options = {
-    uri: carUrl,
-    transform: (body) => {
-      return cheerio.load(body)
-    }
-  }
-
-  return rp(options)
-}
-
-const buildCar = ($, carUrl) => {
+const build = ($, carUrl) => {
   return {
     imageUrl: image($),
     price: price($),
@@ -99,5 +80,5 @@ const videoDataTable = ($, term) => {
 }
 
 module.exports = {
-  scrape
+  build
 }

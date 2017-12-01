@@ -3,10 +3,10 @@ require('sepia')
 
 const expect = chai.expect
 
-const carBuilder = require('./car_builder')
+const scrapedCar = require('./scraped_car')
 
-describe('Car Builder', function() {
-  describe('#scrape()', function() {
+describe('Scraped Car', function() {
+  describe('#retrieve()', function() {
     it('returns the correct car details', async function() {
       const url = 'https://www.arnoldclark.com/used-cars/citroen/c3-picasso/1-6-bluehdi-edition-5dr/2016/ref/arnez-u-13815'
       const expectedCarData = {
@@ -25,7 +25,7 @@ describe('Car Builder', function() {
         'seats': 5,
         'year': 2016
       }
-      let result = await carBuilder.scrape(url)
+      let result = await scrapedCar.retrieve(url)
       expect(result).to.deep.eq(expectedCarData)
     })
 
@@ -35,7 +35,7 @@ describe('Car Builder', function() {
         'roadTax': 0,
       }
       it('returns the correct car details', async function() {
-        let result = await carBuilder.scrape(url)
+        let result = await scrapedCar.retrieve(url)
         expect(result).to.include(expectedCarData)
       })
     })

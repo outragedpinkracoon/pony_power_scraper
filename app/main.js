@@ -1,6 +1,6 @@
 require('sepia')
 
-carBuilder = require('./arnold_clark/car_builder')
+scrapedCar = require('./arnold_clark/scraped_car')
 usedCarLinks = require('./arnold_clark/used_car_links')
 
 const run = async () => {
@@ -11,7 +11,7 @@ const run = async () => {
 }
 
 const buildCar = async (carUrl) => {
-  const car = await carBuilder.scrape(carUrl)
+  const car = await scrapedCar.retrieve(carUrl)
   console.log(car)
 }
 
