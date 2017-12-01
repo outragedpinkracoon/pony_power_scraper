@@ -1,39 +1,39 @@
-const rp = require('request-promise')
 const cheerio = require('cheerio')
+const rp = require('request-promise')
 
-const scrape = (carUrl) => {
-  return new Promise((resolve, reject) => {
-    const options = {
-      uri: carUrl,
-      transform: (body) => {
-        return cheerio.load(body)
-      }
+const scrape = async (carUrl) => {
+  $ = await carRequest(carUrl)
+  return buildCar($, carUrl)
+}
+
+const carRequest = (carUrl) => {
+  const options = {
+    uri: carUrl,
+    transform: (body) => {
+      return cheerio.load(body)
     }
+  }
 
-    rp(options)
-      .then(($) => {
-        car = {
-          imageUrl: image($),
-          price: price($),
-          make: videoDataTable($, 'Make'),
-          model: videoDataTable($, 'Model'),
-          year: year($),
-          mileage: productSummary($, 'Mileage'),
-          bodyType: videoDataTable($, 'Body Type'),
-          mpg: productSummary($, 'MPG (combined)'),
-          roadTax: roadTax($),
-          seats: seats($),
-          colour: productSummary($, 'Colour'),
-          engine: engine($),
-          fuel: productSummary($, 'Fuel'),
-          carUrl: carUrl
-        }
-        return resolve(car)
-      })
-      .catch((err) => {
-        reject(err)
-      })
-  })
+  return rp(options)
+}
+
+const buildCar = ($, carUrl) => {
+  return {
+    imageUrl: image($),
+    price: price($),
+    make: videoDataTable($, 'Make'),
+    model: videoDataTable($, 'Model'),
+    year: year($),
+    mileage: productSummary($, 'Mileage'),
+    bodyType: videoDataTable($, 'Body Type'),
+    mpg: productSummary($, 'MPG (combined)'),
+    roadTax: roadTax($),
+    seats: seats($),
+    colour: productSummary($, 'Colour'),
+    engine: engine($),
+    fuel: productSummary($, 'Fuel'),
+    carUrl: carUrl
+  }
 }
 
 const engine = ($) => {
