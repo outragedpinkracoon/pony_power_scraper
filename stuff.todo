@@ -1,0 +1,5 @@
+Must Fix
+	☐ Add error handling to async functions
+
+Features
+	☐ Store results of scrape in redis / db / somewhere
