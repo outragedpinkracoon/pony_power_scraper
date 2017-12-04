@@ -13,12 +13,12 @@ const retrieve = (url, numberOfCars) => {
 
     rp(options).then(($) => {
       const links = $('.ac-vehicle__title a')
-      const top5results = []
+      const results = []
       for (let index = 0; index < numberOfCars; index++) {
         const href = $(links[index]).attr('href')
-        top5results.push(`${root}${href}`)
+        results.push(`${root}${href}`)
       }
-      return resolve(top5results)
+      return resolve(results)
     })
     .catch((err) => {
       reject(err)
