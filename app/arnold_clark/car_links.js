@@ -2,28 +2,23 @@ const rp = require('request-promise')
 const cheerio = require('cheerio')
 const root = 'https://www.arnoldclark.com'
 
-const retrieve = (url, numberOfCars) => {
-  return new Promise(function(resolve, reject) {
-    const options = {
-      uri: url,
-      transform: (body) => {
-        return cheerio.load(body)
-      }
+const retrieve = async (url, numberOfCars) => {
+  const options = {
+    uri: url,
+    transform: (body) => {
+      return cheerio.load(body)
     }
+  }
 
-    rp(options).then(($) => {
-      const links = $('.ac-vehicle__title a')
-      const results = []
-      for (let index = 0; index < numberOfCars; index++) {
-        const href = $(links[index]).attr('href')
-        results.push(`${root}${href}`)
-      }
-      return resolve(results)
-    })
-    .catch((err) => {
-      reject(err)
-    })
-  })
+  $ = await rp(options)
+
+  const links = $('.ac-vehicle__title a')
+  const results = []
+  for (let index = 0; index < numberOfCars; index++) {
+    const href = $(links[index]).attr('href')
+    results.push(`${root}${href}`)
+  }
+  return results
 }
 
 module.exports = {
