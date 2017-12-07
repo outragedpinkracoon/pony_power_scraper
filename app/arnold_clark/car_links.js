@@ -3,14 +3,8 @@ const cheerio = require('cheerio')
 const root = 'https://www.arnoldclark.com'
 
 const retrieve = async (url, numberOfCars) => {
-  const options = {
-    uri: url,
-    transform: (body) => {
-      return cheerio.load(body)
-    }
-  }
-
-  $ = await rp(options)
+  response = await rp({ uri: url })
+  $ = cheerio.load(response)
 
   const links = $('.ac-vehicle__title a')
   const results = []

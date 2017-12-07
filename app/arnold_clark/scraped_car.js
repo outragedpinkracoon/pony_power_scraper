@@ -8,15 +8,9 @@ const retrieve = async (carUrl) => {
   return carBuilder.build($, carUrl)
 }
 
-const carRequest = (carUrl) => {
-  const options = {
-    uri: carUrl,
-    transform: (body) => {
-      return cheerio.load(body)
-    }
-  }
-
-  return rp(options)
+const carRequest = async (carUrl) => {
+  const response = await rp({ uri: carUrl })
+  return cheerio.load(response)
 }
 
 module.exports = {
