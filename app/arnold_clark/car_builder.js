@@ -13,7 +13,8 @@ const build = ($, carUrl) => {
     colour: productSummary($, 'Colour'),
     engine: engine($),
     fuel: productSummary($, 'Fuel'),
-    carUrl: carUrl
+    carUrl: carUrl,
+    registration: registration($)
   }
 }
 
@@ -34,7 +35,6 @@ const image = ($) => {
 }
 
 const price = ($) => {
-  debugger
   let price = $('.ac-money').first().text()
   return parseInt(
     price.replace('£', '')
@@ -77,6 +77,18 @@ const videoDataTable = ($, term) => {
   return textOfSibling(
     $(`#video_data_table .ac-product__summary dt:contains('${term}')`)
   )
+}
+
+const registration = ($) => {
+  return reactProps($).registration
+}
+
+const reactProps = ($) => {
+  return JSON.parse(
+      // eslint-disable-next-line quotes
+      $("div[data-react-class='vehicles/show/productPageContainer']")
+      .attr('data-react-props'))
+      .vehicle
 }
 
 module.exports = {
