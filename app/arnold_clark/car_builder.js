@@ -8,6 +8,7 @@ const build = ($, carUrl) => {
     colour: productSummary($, 'Colour'),
     engine: engine($),
     fuel: productSummary($, 'Fuel'),
+    fuelTankCapacity: fuelTankCapacity($),
     imageUrl: image($),
     make: videoDataTable($, 'Make'),
     mileage: productSummary($, 'Mileage'),
@@ -36,6 +37,12 @@ const engine = ($) => {
 
   return parseFloat(
     engineLitres.toFixed(2)
+  )
+}
+
+const fuelTankCapacity = () => {
+  return parseInt(
+    technicalSpecification($, 'Fuel Tank Capacity (Litres)')
   )
 }
 

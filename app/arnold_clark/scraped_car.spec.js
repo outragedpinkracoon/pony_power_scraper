@@ -11,21 +11,22 @@ describe('Scraped Car', function() {
       const url = 'https://www.arnoldclark.com/used-cars/citroen/c3-picasso/1-6-bluehdi-edition-5dr/2016/ref/arnez-u-13815'
       const expectedCarData = {
         'bodyType': 'Estate',
+        'breakHorsePower': 100,
         'carUrl': 'https://www.arnoldclark.com/used-cars/citroen/c3-picasso/1-6-bluehdi-edition-5dr/2016/ref/arnez-u-13815',
         'colour': 'Black',
         'engine': 1.56,
         'fuel': 'Diesel',
+        'fuelTankCapacity': 50,
         'imageUrl': 'https://vcache.arnoldclark.com/imageserver/ADRHNZE6Z1-YUS1/800/f',
         'make': 'Citroen',
         'mileage': '9624',
         'model': 'C3 Picasso',
         'mpg': '72.4',
         'price': 8798,
+        'registration': 'SY16ZHD',
         'roadTax': 20,
         'seats': 5,
         'year': 2016,
-        'registration': 'SY16ZHD',
-        'breakHorsePower': 100
       }
       let result = await scrapedCar.retrieve(url)
       expect(result).to.deep.eq(expectedCarData)
