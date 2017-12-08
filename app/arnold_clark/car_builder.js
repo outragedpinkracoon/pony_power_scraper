@@ -11,6 +11,7 @@ const build = ($, carUrl) => {
     fuelTankCapacity: fuelTankCapacity($),
     imageUrl: image($),
     make: videoDataTable($, 'Make'),
+    maxTowingWeight: maxTowingWeight($),
     mileage: productSummary($, 'Mileage'),
     model: videoDataTable($, 'Model'),
     mpg: productSummary($, 'MPG (combined)'),
@@ -18,6 +19,7 @@ const build = ($, carUrl) => {
     registration: registration($),
     roadTax: roadTax($),
     seats: seats($),
+    turningCircle: turningCircle($),
     year: year($)
   }
 }
@@ -50,6 +52,12 @@ const image = ($) => {
   return $('.ac-imagethumbnail img').first().attr('src')
 }
 
+const maxTowingWeight = ($) => {
+  return parseInt(
+    technicalSpecification($, 'Max. Towing Weight - Unbraked')
+  )
+}
+
 const price = ($) => {
   let price = $('.ac-money').first().text()
   return parseInt(
@@ -74,6 +82,12 @@ const roadTax = ($) => {
 const seats = ($) => {
   return parseInt(
     productSummary($, 'Seats')
+  )
+}
+
+const turningCircle = ($) => {
+  return parseInt(
+    technicalSpecification($, 'Turning Circle - Kerb to Kerb')
   )
 }
 

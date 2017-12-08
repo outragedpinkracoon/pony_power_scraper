@@ -19,6 +19,7 @@ describe('Scraped Car', function() {
         'fuelTankCapacity': 50,
         'imageUrl': 'https://vcache.arnoldclark.com/imageserver/ADRHNZE6Z1-YUS1/800/f',
         'make': 'Citroen',
+        'maxTowingWeight': 620,
         'mileage': '9624',
         'model': 'C3 Picasso',
         'mpg': '72.4',
@@ -26,6 +27,7 @@ describe('Scraped Car', function() {
         'registration': 'SY16ZHD',
         'roadTax': 20,
         'seats': 5,
+        'turningCircle': 10,
         'year': 2016,
       }
       let result = await scrapedCar.retrieve(url)
