@@ -1,4 +1,9 @@
-const cheerio = require('cheerio')
+const sections = require('./car_page_sections')
+
+const productSummary = sections.productSummary
+const techSpecs = sections.techSpecs
+const reactProps = sections.reactProps
+const videoDataTable = sections.videoDataTable
 
 const build = ($, carUrl) => {
   return {
@@ -26,7 +31,7 @@ const build = ($, carUrl) => {
 
 const breakHorsePower = ($) => {
   return parseInt(
-    technicalSpecification($, 'Engine Power - BHP')
+    techSpecs($, 'Engine Power - BHP')
   )
 }
 
@@ -44,7 +49,7 @@ const engine = ($) => {
 
 const fuelTankCapacity = () => {
   return parseInt(
-    technicalSpecification($, 'Fuel Tank Capacity (Litres)')
+    techSpecs($, 'Fuel Tank Capacity (Litres)')
   )
 }
 
@@ -54,7 +59,7 @@ const image = ($) => {
 
 const maxTowingWeight = ($) => {
   return parseInt(
-    technicalSpecification($, 'Max. Towing Weight - Unbraked')
+    techSpecs($, 'Max. Towing Weight - Unbraked')
   )
 }
 
@@ -87,7 +92,7 @@ const seats = ($) => {
 
 const turningCircle = ($) => {
   return parseInt(
-    technicalSpecification($, 'Turning Circle - Kerb to Kerb')
+    techSpecs($, 'Turning Circle - Kerb to Kerb')
   )
 }
 
@@ -95,37 +100,6 @@ const year = ($) => {
   return parseInt(
     productSummary($, 'Year')
   )
-}
-
-const productSummary = ($, term) => {
-  return textOfSibling(
-    $(`table.ac-product__summary th:contains('${term}')`)
-  )
-}
-
-const technicalSpecification = ($, term) => {
-  const html = cheerio.load(reactProps($).specification.technical)
-  return textOfSibling(
-    html(`th:contains('${term}')`)
-  )
-}
-
-const reactProps = ($) => {
-  return JSON.parse(
-    // eslint-disable-next-line quotes
-    $("div[data-react-class='vehicles/show/productPageContainer']")
-      .attr('data-react-props'))
-    .vehicle
-}
-
-const videoDataTable = ($, term) => {
-  return textOfSibling(
-    $(`#video_data_table .ac-product__summary dt:contains('${term}')`)
-  )
-}
-
-const textOfSibling = (element) => {
-  return element.next().text()
 }
 
 module.exports = {
