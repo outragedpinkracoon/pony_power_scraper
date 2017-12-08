@@ -24,7 +24,8 @@ describe('Scraped Car', function() {
         'roadTax': 20,
         'seats': 5,
         'year': 2016,
-        'registration': 'SY16ZHD'
+        'registration': 'SY16ZHD',
+        'breakHorsePower': 100
       }
       let result = await scrapedCar.retrieve(url)
       expect(result).to.deep.eq(expectedCarData)
