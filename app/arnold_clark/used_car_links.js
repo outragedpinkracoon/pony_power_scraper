@@ -1,10 +1,7 @@
 const carLinks = require('./car_links')
 
-const numberOfCars = 5
-const root = 'https://www.arnoldclark.com/used-cars/search'
-
-const url = () => {
-  const params = [
+const params = () => {
+  return [
     '?search_type=Used%20Cars',
     '&payment_type=cash',
     '&max_price=10000',
@@ -27,13 +24,11 @@ const url = () => {
     '&seats%5B%5D=5',
     '&seats%5B%5D=7',
     '&sort_order=price'
-  ]
-
-  return `${root}${params.join('')}`
+  ].join('')
 }
 
 const scrape = () => {
-  return carLinks.retrieve(url(), numberOfCars)
+  return carLinks.retrieve(params())
 }
 
 module.exports = {

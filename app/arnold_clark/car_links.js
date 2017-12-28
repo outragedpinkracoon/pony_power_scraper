@@ -1,8 +1,13 @@
 const rp = require('request-promise')
 const cheerio = require('cheerio')
-const root = 'https://www.arnoldclark.com'
 
-const retrieve = async (url, numberOfCars) => {
+const numberOfCars = 5
+const root = 'https://www.arnoldclark.com'
+const searchRoot = 'https://www.arnoldclark.com/used-cars/search'
+
+const retrieve = async (params) => {
+  const url = `${searchRoot}${params}`
+
   response = await rp({ uri: url })
   $ = cheerio.load(response)
 
