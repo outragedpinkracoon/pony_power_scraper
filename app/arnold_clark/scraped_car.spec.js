@@ -11,26 +11,32 @@ describe('Scraped Car', function() {
       const url = 'https://www.arnoldclark.com/used-cars/citroen/c3-picasso/1-6-bluehdi-edition-5dr/2016/ref/arnez-u-13815'
       const expectedCarData = {
         'bodyType': 'Estate',
-        'breakHorsePower': 100,
         'carUrl': 'https://www.arnoldclark.com/used-cars/citroen/c3-picasso/1-6-bluehdi-edition-5dr/2016/ref/arnez-u-13815',
         'colour': 'Black',
-        'engine': 1.56,
-        'fuel': 'Diesel',
-        'fuelTankCapacity': 50,
+        'cost': {
+          'price': 8798,
+          'roadTax': 20
+        },
+        'engine': {
+          'breakHorsePower': 100,
+          'engineSize': 1.56,
+          'fuelTankCapacity': 50,
+          'fuel': 'Diesel',
+          'mpg': '72.4'
+        },
         'imageUrl': 'https://vcache.arnoldclark.com/imageserver/ADRHNZE6Z1-YUS1/800/f',
-        'make': 'Citroen',
-        'maxTowingWeightBraked': 900,
-        'maxTowingWeightUnbraked': 620,
-        'minimumKerbWeight': 1420,
         'mileage': '9624',
+        'make': 'Citroen',
         'model': 'C3 Picasso',
-        'mpg': '72.4',
-        'price': 8798,
         'registration': 'SY16ZHD',
-        'roadTax': 20,
         'seats': 5,
         'turningCircle': 10,
         'year': 2016,
+        'towing': {
+          'maxTowingWeightBraked': 900,
+          'maxTowingWeightUnbraked': 620,
+          'minimumKerbWeight': 1420,
+        }
       }
       let result = await scrapedCar.retrieve(url)
       expect(result).to.deep.eq(expectedCarData)
@@ -39,11 +45,14 @@ describe('Scraped Car', function() {
     context('when the road tax is not applicable', function() {
       const url = 'https://www.arnoldclark.com/nearly-new-cars/vauxhall/corsa/1-4-design-5dr/2016/ref/arnay-u-101905'
       const expectedCarData = {
-        'roadTax': 0,
+        'cost': {
+          'price': 8698,
+          'roadTax': 0
+        }
       }
       it('returns the correct car details', async function() {
         let result = await scrapedCar.retrieve(url)
-        expect(result).to.include(expectedCarData)
+        expect(result).to.deep.include(expectedCarData)
       })
     })
   })

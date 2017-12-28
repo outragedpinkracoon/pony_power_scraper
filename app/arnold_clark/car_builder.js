@@ -8,24 +8,30 @@ const videoDataTable = sections.videoDataTable
 const build = ($, carUrl) => {
   return {
     bodyType: videoDataTable($, 'Body Type'),
-    breakHorsePower: breakHorsePower($),
     carUrl: carUrl,
     colour: productSummary($, 'Colour'),
-    engine: engine($),
-    fuel: productSummary($, 'Fuel'),
-    fuelTankCapacity: fuelTankCapacity($),
+    cost: {
+      price: price($),
+      roadTax: roadTax($)
+    },
+    engine: {
+      engineSize: engineSize($),
+      mpg: productSummary($, 'MPG (combined)'),
+      fuel: productSummary($, 'Fuel'),
+      fuelTankCapacity: fuelTankCapacity($),
+      breakHorsePower: breakHorsePower($)
+    },
     imageUrl: image($),
     make: videoDataTable($, 'Make'),
-    maxTowingWeightBraked: maxTowingWeightBraked($),
-    maxTowingWeightUnbraked: maxTowingWeightUnbraked($),
-    minimumKerbWeight: minimumKerbWeight($),
     mileage: productSummary($, 'Mileage'),
     model: videoDataTable($, 'Model'),
-    mpg: productSummary($, 'MPG (combined)'),
-    price: price($),
     registration: registration($),
-    roadTax: roadTax($),
     seats: seats($),
+    towing: {
+      maxTowingWeightBraked: maxTowingWeightBraked($),
+      maxTowingWeightUnbraked: maxTowingWeightUnbraked($),
+      minimumKerbWeight: minimumKerbWeight($),
+    },
     turningCircle: turningCircle($),
     year: year($)
   }
@@ -37,7 +43,7 @@ const breakHorsePower = ($) => {
   )
 }
 
-const engine = ($) => {
+const engineSize = ($) => {
   engineCC = parseFloat(
     productSummary($, 'Engine').replace('cc', '')
   )
