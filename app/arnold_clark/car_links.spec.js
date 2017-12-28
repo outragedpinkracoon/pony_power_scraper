@@ -75,4 +75,27 @@ describe('Car Links', function() {
       })
     })
   })
+
+  describe('Calculating the number of cars to return', function() {
+    describe('when cars available are more than cars requested', function() {
+      it('returns the requested number of cars', async function() {
+        const result = await carLinks.scrape('Nearly%20New%20Cars', 5, 1)
+        expect(result.car_data.length).to.eq(5)
+      })
+    })
+
+    describe('when cars available equals cars requested', function() {
+      it('returns the requested number of cars', async function() {
+        const result = await carLinks.scrape('Nearly%20New%20Cars', 24, 1)
+        expect(result.car_data.length).to.eq(24)
+      })
+    })
+
+    describe('when cars available is less than cars requested', function() {
+      it('returns the number of cars available', async function() {
+        const result = await carLinks.scrape('Nearly%20New%20Cars', 24, 5)
+        expect(result.car_data.length).to.eq(11)
+      })
+    })
+  })
 })
