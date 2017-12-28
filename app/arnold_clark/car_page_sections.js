@@ -18,7 +18,7 @@ const reactProps = ($) => {
     // eslint-disable-next-line quotes
     $("div[data-react-class='vehicles/show/productPageContainer']")
       .attr('data-react-props'))
-    .vehicle
+      .vehicle
 }
 
 const videoDataTable = ($, term) => {
