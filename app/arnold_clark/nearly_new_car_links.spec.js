@@ -16,7 +16,7 @@ describe('Car Links', function() {
         'https://www.arnoldclark.com/nearly-new-cars/vauxhall/corsa/1-4-ecoflex-sri-5dr/2017/ref/arnbj-u-62089',
         'https://www.arnoldclark.com/nearly-new-cars/dacia/sandero/1-5-dci-ambiance-5dr/2017/ref/arnas-u-56813'
       ]
-      const result = await nearlyNewCarLinks.scrape()
+      const result = await nearlyNewCarLinks.scrape(5)
       expect(result).to.deep.eq(expectedResults)
     })
   })

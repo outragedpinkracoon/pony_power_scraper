@@ -10,7 +10,7 @@ const run = async () => {
 }
 
 const scrapeCars = async (carLinks, title) => {
-  const links = await carLinks.scrape()
+  const links = await carLinks.scrape(5)
   links.forEach((carUrl) => {
     buildCar(carUrl, title)
   })

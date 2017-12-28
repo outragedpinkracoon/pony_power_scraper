@@ -28,8 +28,8 @@ const params = (pageNumber = 1) => {
   ].join('')
 }
 
-const scrape = () => {
-  return carLinks.retrieve(params())
+const scrape = (carsRequested = 24) => {
+  return carLinks.retrieve(params(), carsRequested)
 }
 
 module.exports = {
