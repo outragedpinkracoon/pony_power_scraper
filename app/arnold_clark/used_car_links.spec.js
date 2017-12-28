@@ -17,7 +17,8 @@ describe('Car Links', function() {
         'https://www.arnoldclark.com/used-cars/vauxhall/corsa/1-4-ecoflex-sri-5dr/2016/ref/arnfe-u-19944'
       ]
       const result = await usedCarLinks.scrape(5)
-      expect(result).to.deep.eq(expectedResults)
+      expect(result.car_data).to.deep.eq(expectedResults)
+      expect(result.total_pages).to.eq(7)
     })
   })
 })

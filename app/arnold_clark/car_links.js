@@ -11,7 +11,16 @@ const retrieve = async (params, carsRequested) => {
   const carLinks = $('.ac-vehicle__title a')
 
   const max = carLimit(carsRequested, carLinks)
-  return carsLimitedTo(max, carLinks)
+  return {
+    total_pages: totalPages(),
+    car_data: carsLimitedTo(max, carLinks)
+  }
+}
+
+const totalPages = () => {
+  return parseInt(
+    $('.ac-pagination__button--last')[0].attribs['data-page-number']
+  )
 }
 
 const carLimit = (carsRequested, carLinks) => {
