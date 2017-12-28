@@ -6,7 +6,7 @@ CREATE TYPE scrape_type AS ENUM ('nearly-new', 'used');
 
 CREATE TABLE scrape_run_details (
     id serial8 primary key,
-    created_at date,
+    created_at timestamp default current_timestamp,
     scrape_type scrape_type
 );
 

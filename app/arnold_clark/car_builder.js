@@ -73,9 +73,11 @@ const maxTowingWeightBraked = ($) => {
 }
 
 const maxTowingWeightUnbraked = ($) => {
-  return parseInt(
+  parsed = parseInt(
     techSpecs($, 'Max. Towing Weight - Unbraked')
   )
+  // TODO: Keep an eye out for a car to VCR for this to test!
+  return defaultToZero(parsed)
 }
 
 const minimumKerbWeight = ($) => {
