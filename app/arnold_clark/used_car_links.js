@@ -1,6 +1,6 @@
 const carLinks = require('./car_links')
 
-const params = (pageNumber = 1) => {
+const params = (pageNumber) => {
   return [
     '?search_type=Used%20Cars',
     '&payment_type=cash',
@@ -28,8 +28,8 @@ const params = (pageNumber = 1) => {
   ].join('')
 }
 
-const scrape = (carsRequested = 24) => {
-  return carLinks.retrieve(params(), carsRequested)
+const scrape = (carsRequested = 24, pageNumber = 1) => {
+  return carLinks.retrieve(params(pageNumber), carsRequested)
 }
 
 module.exports = {
