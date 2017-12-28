@@ -1,0 +1,31 @@
+{
+  "statusCode": 200,
+  "headers": {
+    "server": "nginx",
+    "date": "Thu, 28 Dec 2017 21:50:24 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "content-length": "151471",
+    "x-frame-options": "SAMEORIGIN",
+    "x-xss-protection": "1; mode=block",
+    "x-content-type-options": "nosniff",
+    "etag": "W/\"283ec61ae790acdb771ef5fb882908ff\"",
+    "cache-control": "max-age=0, private, must-revalidate, private",
+    "set-cookie": [
+      "cookieconsent=true; domain=.arnoldclark.com; path=/; expires=Fri, 28 Dec 2018 21:50:23 -0000",
+      "fontloaded=true; domain=.arnoldclark.com; path=/",
+      "_acdotcom_session=VGk3ZTVVaXJpbHhBV05iMmtZZ0haOUNjVTBJemZHTVhYd0FXaHY3c00yNVRNSldObmRPc09uWVAzcVNwRzJzMjZ3TTJDVlYyR0JqNTE0bGRuWHBHVTNRcWkvdGdJTHpIUUw0R1QrUExIRHF2a1RXK0I5bjNDdTl6eG5HUkpOK0Y4YkhoaUQ1RzJNTGNVN0dpU045R3liWWE3bFZENEtzTy9ta1o3ZUFPUm83ZEg1QWs4RkpIeXRpZ3l1WmpaaU8ydTNFMWhpMGJRYnpYTXdZM0paMThrNUFqb2hscGxSaFFEbGhrSzkvWXhRaTBaZThpUENJc21QbnBFMEF3ZmFOUkRXdWJFRHhqd0JWRjlFOUVwZ3NFMytnaTRzZlc5VnNBTS9OUEk3WldIVDg9LS1hREs2WlA1TkdFUjY0cTFwcHBGakJBPT0%3D--717f322f49a6dba1831911b0c350f0978b33979c; path=/; HttpOnly",
+      "SERVERID=; Expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/"
+    ],
+    "x-request-id": "d17cc0ff-dc35-488d-8460-d3e0ff9c7952",
+    "x-runtime": "0.888490",
+    "x-app-server": "rails-cluster/mrlweb05.arnoldclark.com"
+  },
+  "url": "https://www.arnoldclark.com:443/used-cars/search?search_type=Nearly%20New%20Cars&payment_type=cash&max_price=10000&location=Edinburgh%20EH17%2C%20UK&distance=100&photos_only=true&unreserved_only=true&transmission=Manual&mpg=50&mileage=10000&age=2&min_engine_size=1345&body_type%5B%5D=Hatchback&body_type%5B%5D=Estate&body_type%5B%5D=Saloon&body_type%5B%5D=SUV&body_type%5B%5D=People%20carrier&doors%5B%5D=5&seats%5B%5D=4&seats%5B%5D=5&seats%5B%5D=7&sort_order=price&page=5",
+  "time": 1163,
+  "request": {
+    "method": "GET",
+    "headers": {
+      "host": "www.arnoldclark.com"
+    }
+  }
+}

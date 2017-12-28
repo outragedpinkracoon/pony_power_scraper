@@ -9,10 +9,13 @@ const scrape = async (searchType, carsRequested = 24, pageNumber = 1) => {
   $ = cheerio.load(response)
 
   const carLinks = $('.ac-vehicle__title a')
+  const numberOfCarLinks = carLinks.length
 
-  const max = carLimit(carsRequested, carLinks)
+  const max = carLimit(carsRequested, numberOfCarLinks)
   return {
     total_pages: totalPages(),
+    current_page: pageNumber,
+    total_cars: carLinks.length,
     car_data: carsLimitedTo(max, carLinks)
   }
 }
@@ -23,10 +26,10 @@ const totalPages = () => {
   )
 }
 
-const carLimit = (carsRequested, carLinks) => {
-  let max = carLinks.length
-  if (max > carsRequested) {
-    max = carsRequested
+const carLimit = (carsRequested, numberOfCarLinks) => {
+  let max = carsRequested
+  if (numberOfCarLinks < max) {
+    max = numberOfCarLinks
   }
   return max
 }

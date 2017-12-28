@@ -39,8 +39,40 @@ describe('Car Links', function() {
 
   describe('Returning the total pages', function() {
     it('should return the correct number of total pages', async function() {
-      const result = await carLinks.scrape('Nearly%20New%20Cars')
+      const result = await carLinks.scrape('Nearly%20New%20Cars', 1)
       expect(result.total_pages).to.eq(5)
+    })
+  })
+
+  describe('Returning the current page', function() {
+    describe('when no page is given', function() {
+      it('should return the first page', async function() {
+        const result = await carLinks.scrape('Nearly%20New%20Cars', 1)
+        expect(result.current_page).to.eq(1)
+      })
+    })
+
+    describe('when a page is given', function() {
+      it('should return the given page', async function() {
+        const result = await carLinks.scrape('Nearly%20New%20Cars', 1, 5)
+        expect(result.current_page).to.eq(5)
+      })
+    })
+  })
+
+  describe('Returning the total number of cars on a page', function() {
+    describe('when no page is given', function() {
+      it('should return the first page', async function() {
+        const result = await carLinks.scrape('Nearly%20New%20Cars', 1)
+        expect(result.total_cars).to.eq(24)
+      })
+    })
+
+    describe('when a page is given', function() {
+      it('should return the given page', async function() {
+        const result = await carLinks.scrape('Nearly%20New%20Cars', 1, 5)
+        expect(result.total_cars).to.eq(11)
+      })
     })
   })
 })
