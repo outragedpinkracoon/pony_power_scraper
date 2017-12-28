@@ -1,17 +1,16 @@
 require('sepia')
 
 scrapedCar = require('./arnold_clark/scraped_car')
-usedCarLinks = require('./arnold_clark/used_car_links')
-nearlyNewCarLinks = require('./arnold_clark/nearly_new_car_links')
+carLinks = require('./arnold_clark/car_links')
 
 const run = async () => {
-  scrapeCars(usedCarLinks, 'USED')
-  scrapeCars(nearlyNewCarLinks, 'NEARLY NEW')
+  scrapeCars('Used%20Cars', 'USED')
+  scrapeCars('Nearly%20New%20Cars', 'NEARLY NEW')
 }
 
-const scrapeCars = async (carLinks, title) => {
-  const links = await carLinks.scrape(5)
-  links.forEach((carUrl) => {
+const scrapeCars = async (searchType, title) => {
+  const data = await carLinks.scrape(searchType, 5)
+  data.car_data.forEach((carUrl) => {
     buildCar(carUrl, title)
   })
 }
