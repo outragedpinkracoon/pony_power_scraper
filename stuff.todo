@@ -1,6 +1,7 @@
 Must Fix
 	☐ Add error handling to async functions
-	☐ Investigate casper JS
 
 Features
-	☐ Store results of scrape in redis / db / somewhere
+	☐ Store scraper results from page 1 in db
+	☐ Scrape multiple pages
+	☐ Store results from multiple pages in db
