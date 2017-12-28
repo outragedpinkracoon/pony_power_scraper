@@ -5,11 +5,11 @@ usedCarLinks = require('./arnold_clark/used_car_links')
 nearlyNewCarLinks = require('./arnold_clark/nearly_new_car_links')
 
 const run = async () => {
-  scrapeUsedCars(usedCarLinks, 'USED')
-  scrapeUsedCars(nearlyNewCarLinks, 'NEARLY NEW')
+  scrapeCars(usedCarLinks, 'USED')
+  scrapeCars(nearlyNewCarLinks, 'NEARLY NEW')
 }
 
-const scrapeUsedCars = async (carLinks, title) => {
+const scrapeCars = async (carLinks, title) => {
   const links = await carLinks.scrape()
   links.forEach((carUrl) => {
     buildCar(carUrl, title)
