@@ -1,6 +1,6 @@
 const carLinks = require('./car_links')
 
-const params = () => {
+const params = (pageNumber = 1) => {
   return [
     '?search_type=Used%20Cars',
     '&payment_type=cash',
@@ -23,7 +23,8 @@ const params = () => {
     '&seats%5B%5D=4',
     '&seats%5B%5D=5',
     '&seats%5B%5D=7',
-    '&sort_order=price'
+    '&sort_order=price',
+    `&page=${pageNumber}`
   ].join('')
 }
 

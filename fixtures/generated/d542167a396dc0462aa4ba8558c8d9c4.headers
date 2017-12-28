@@ -1,0 +1,31 @@
+{
+  "statusCode": 200,
+  "headers": {
+    "server": "nginx",
+    "date": "Thu, 28 Dec 2017 20:27:08 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "content-length": "224502",
+    "x-frame-options": "SAMEORIGIN",
+    "x-xss-protection": "1; mode=block",
+    "x-content-type-options": "nosniff",
+    "etag": "W/\"000f35acec416082759b265c0821b003\"",
+    "cache-control": "max-age=0, private, must-revalidate, private",
+    "set-cookie": [
+      "cookieconsent=true; domain=.arnoldclark.com; path=/; expires=Fri, 28 Dec 2018 20:27:07 -0000",
+      "fontloaded=true; domain=.arnoldclark.com; path=/",
+      "_acdotcom_session=anZDTHNWb01pYTBiR3FFOThOTmFKN2hzaVJUSTJMSWlnYkVCems4cWMxdHRQc2R6VC9tM0ZEN21hVC9iTm9FZ2pqVkxjNEdwQWVseGdkZm5pNFFXaW41MU9KWm5YeW9tUEVjTVdZVEhodkZhSjZwT0hLdGU2eHA5VUp1dnRMV3hZVnNzNVdCaWdIajF1dHgvdnR0ejFVRUJkSERXaXlnNythbjZDNXlQZjdwSkNLOUlXdzc3NkR5QURYT3RHemZsZUdjemg5cFZIKzZXWjIxc3hqWmZrUkZuT2VIWEhWTG5qUEk3dkZqTmNmb0p6YTFaZ0RRNTBtL2N1Z3Q2Q2FBWjU4Q25YRXRXSjJEbzd2aDBaM3J4cDZ6UGczcEwwYzlWVmZyOFdrUXpKVlk9LS1oQXZSMDYyRzRyZjhGcVJSZ1N6L2lRPT0%3D--6e1a9a6c877c4e2e1d3d23bcdb46e5cfefea22b1; path=/; HttpOnly",
+      "SERVERID=; Expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/"
+    ],
+    "x-request-id": "68af7f59-160d-4601-9b45-1d7d9dad3981",
+    "x-runtime": "1.323969",
+    "x-app-server": "rails-cluster/prdweb06.arnoldclark.com"
+  },
+  "url": "https://www.arnoldclark.com:443/used-cars/search?search_type=Used%20Cars&payment_type=cash&max_price=10000&location=Edinburgh%20EH17%2C%20UK&distance=100&photos_only=true&unreserved_only=true&transmission=Manual&mpg=50&mileage=10000&age=2&min_engine_size=1345&body_type%5B%5D=Hatchback&body_type%5B%5D=Estate&body_type%5B%5D=Saloon&body_type%5B%5D=SUV&body_type%5B%5D=People%20carrier&doors%5B%5D=5&seats%5B%5D=4&seats%5B%5D=5&seats%5B%5D=7&sort_order=price&page=1",
+  "time": 1638,
+  "request": {
+    "method": "GET",
+    "headers": {
+      "host": "www.arnoldclark.com"
+    }
+  }
+}
