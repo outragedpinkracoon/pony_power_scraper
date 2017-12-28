@@ -1,0 +1,31 @@
+{
+  "statusCode": 200,
+  "headers": {
+    "server": "nginx",
+    "date": "Thu, 28 Dec 2017 22:06:12 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "content-length": "119299",
+    "x-frame-options": "SAMEORIGIN",
+    "x-xss-protection": "1; mode=block",
+    "x-content-type-options": "nosniff",
+    "etag": "W/\"0d12fdc4365459b961c90e7313849315\"",
+    "cache-control": "max-age=0, private, must-revalidate, private",
+    "set-cookie": [
+      "cookieconsent=true; domain=.arnoldclark.com; path=/; expires=Fri, 28 Dec 2018 22:06:11 -0000",
+      "fontloaded=true; domain=.arnoldclark.com; path=/",
+      "_acdotcom_session=dWFJTEZydy9TQTlXM09rdjlESmhSMXZQMXk3cmZnRTkxdzUva09sWFlxY0ZNTldjMGtRRW9PTWZ6WldsNHYyNFRVQlRIU3BtREhBSithTUcwa2MvSWlFZmpQcXJLelc1TG1HR1psUmVvckJyQ05STzIyQWUyL1o1Rmo0cVc4b1VvWXRhcXFrMnZVMDNSVVRlNXNGK2VHcW03Mkk0ZXpUc0xvcmhQMUJiVFNyckJYNDF4aHVFajRBTWpsRnQwdlNVWlQxMTMxZUF6YkJOVDQrMVRNb1ZmWjlqY1IvNXpRMFRxaFlqTVR1ODZKU1FZY0NtQ1c1QjkzOUswYjI1WU1Wdml2cWZZYVpwRDdkSlQ3Q2hiaktXZFNVeHJEa2VudGFDODZGOE5Pb1RuMjg9LS1Lak9YSExQMDFqNmdjSERJTFlvaUd3PT0%3D--200586be43f7a5d18f2a0c43a9c58b34cb71acb7; path=/; HttpOnly",
+      "SERVERID=; Expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/"
+    ],
+    "x-request-id": "5b5e828d-b603-4853-b1c0-e89a3f97cba7",
+    "x-runtime": "0.359731",
+    "x-app-server": "rails-cluster/mrlweb01.arnoldclark.com"
+  },
+  "url": "https://www.arnoldclark.com:443/nearly-new-cars/mg/mg3/1-5-vti-tech-3form-sport-5dr-start-stop/2017/ref/cc_d7kx8llkbakt7ne1",
+  "time": 726,
+  "request": {
+    "method": "GET",
+    "headers": {
+      "host": "www.arnoldclark.com"
+    }
+  }
+}

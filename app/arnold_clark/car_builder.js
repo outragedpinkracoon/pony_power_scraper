@@ -66,9 +66,10 @@ const image = ($) => {
 }
 
 const maxTowingWeightBraked = ($) => {
-  return parseInt(
+  parsed = parseInt(
     techSpecs($, 'Max. Towing Weight - Braked')
   )
+  return defaultToZero(parsed)
 }
 
 const maxTowingWeightUnbraked = ($) => {
@@ -78,9 +79,10 @@ const maxTowingWeightUnbraked = ($) => {
 }
 
 const minimumKerbWeight = ($) => {
-  return parseInt(
+  parsed = parseInt(
     techSpecs($, 'Minimum Kerbweight')
   )
+  return defaultToZero(parsed)
 }
 
 const price = ($) => {
@@ -101,7 +103,7 @@ const roadTax = ($) => {
       .replace(' per year', '')
       .replace('£', '')
   )
-  return isNaN(parsed) ? 0 : parsed
+  return defaultToZero(parsed)
 }
 
 const seats = ($) => {
@@ -120,6 +122,10 @@ const year = ($) => {
   return parseInt(
     productSummary($, 'Year')
   )
+}
+
+const defaultToZero = (value) => {
+  return isNaN(value) ? 0 : value
 }
 
 module.exports = {

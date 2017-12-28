@@ -55,6 +55,36 @@ describe('Scraped Car', function() {
         expect(result).to.deep.include(expectedCarData)
       })
     })
+
+    context('when the max towing weight braked is not applicable', function() {
+      const url = 'https://www.arnoldclark.com/nearly-new-cars/mg/mg3/1-5-vti-tech-3form-sport-5dr-start-stop/2017/ref/cc_d7kx8llkbakt7ne1'
+      const expectedCarData = {
+        'towing': {
+          'maxTowingWeightBraked': 0,
+          'maxTowingWeightUnbraked': 200,
+          'minimumKerbWeight': 1150
+        }
+      }
+      it('returns the correct car details', async function() {
+        let result = await scrapedCar.retrieve(url)
+        expect(result).to.deep.include(expectedCarData)
+      })
+    })
+
+    context('when the minimum kerb weight is not applicable', function() {
+      const url = 'https://www.arnoldclark.com/used-cars/vauxhall/corsa/1-4-design-5dr/2016/ref/arnbg-u-99049'
+      const expectedCarData = {
+        'towing': {
+          'maxTowingWeightBraked': 800,
+          'maxTowingWeightUnbraked': 550,
+          'minimumKerbWeight': 0
+        }
+      }
+      it('returns the correct car details', async function() {
+        let result = await scrapedCar.retrieve(url)
+        expect(result).to.deep.include(expectedCarData)
+      })
+    })
   })
 })
 
