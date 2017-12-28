@@ -16,7 +16,9 @@ const build = ($, carUrl) => {
     fuelTankCapacity: fuelTankCapacity($),
     imageUrl: image($),
     make: videoDataTable($, 'Make'),
-    maxTowingWeight: maxTowingWeight($),
+    maxTowingWeightBraked: maxTowingWeightBraked($),
+    maxTowingWeightUnbraked: maxTowingWeightUnbraked($),
+    minimumKerbWeight: minimumKerbWeight($),
     mileage: productSummary($, 'Mileage'),
     model: videoDataTable($, 'Model'),
     mpg: productSummary($, 'MPG (combined)'),
@@ -57,9 +59,21 @@ const image = ($) => {
   return $('.ac-imagethumbnail img').first().attr('src')
 }
 
-const maxTowingWeight = ($) => {
+const maxTowingWeightBraked = ($) => {
+  return parseInt(
+    techSpecs($, 'Max. Towing Weight - Braked')
+  )
+}
+
+const maxTowingWeightUnbraked = ($) => {
   return parseInt(
     techSpecs($, 'Max. Towing Weight - Unbraked')
+  )
+}
+
+const minimumKerbWeight = ($) => {
+  return parseInt(
+    techSpecs($, 'Minimum Kerbweight')
   )
 }
 
