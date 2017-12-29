@@ -1,9 +1,9 @@
-const sections = require('./car_page_sections')
-
-const productSummary = sections.productSummary
-const techSpecs = sections.techSpecs
-const reactProps = sections.reactProps
-const videoDataTable = sections.videoDataTable
+const {
+  productSummary,
+  techSpecs,
+  reactProps,
+  videoDataTable
+} = require('./car_page_sections')
 
 const build = ($, carUrl) => {
   return {

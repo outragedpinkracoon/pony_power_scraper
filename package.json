@@ -26,6 +26,7 @@
     "test-debug": "VCR_MODE=cache mocha --inspect-brk app/**/*.spec.js",
     "test-vcr": "VCR_MODE=cache npm test",
     "start": "node app/main.js",
-    "start-vcr": "VCR_MODE=cache npm start"
+    "start-vcr": "VCR_MODE=cache npm start",
+    "lint": "node_modules/.bin/eslint ."
   }
 }
