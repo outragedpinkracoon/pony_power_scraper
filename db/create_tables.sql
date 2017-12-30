@@ -1,4 +1,4 @@
-DROP TABLE scraped_car_details;
+DROP TABLE scraped_car_attributes;
 DROP TABLE scrape_run_details;
 DROP TYPE scrape_type;
 
@@ -10,9 +10,8 @@ CREATE TABLE scrape_run_details (
     scrape_type scrape_type
 );
 
-CREATE TABLE scraped_car_details (
-    details jsonb,
-    scrape_type scrape_type,
+CREATE TABLE scraped_car_attributes (
+    car_attributes jsonb,
     scrape_run_id int8 references scrape_run_details(id)
 );
 

@@ -1,7 +1,6 @@
 Must Fix
-	☐ Add error handling to async functions
+	☐ Move database functions to another file
 
 Features
-	☐ Store scraper results from page 1 in db
 	☐ Scrape multiple pages
 	☐ Store results from multiple pages in db
