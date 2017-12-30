@@ -15,3 +15,6 @@ CREATE TABLE scraped_car_details (
     scrape_type scrape_type,
     scrape_run_id int8 references scrape_run_details(id)
 );
+
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO :user;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO :user;
