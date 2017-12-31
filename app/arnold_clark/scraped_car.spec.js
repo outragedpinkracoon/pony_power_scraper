@@ -23,10 +23,10 @@ describe('scraped car', function() {
           'engineSize': 1.56,
           'fuelTankCapacity': 50,
           'fuel': 'Diesel',
-          'mpg': '72.4'
+          'mpg': 72.4
         },
         'imageUrl': 'https://vcache.arnoldclark.com/imageserver/ADRHNZE6Z1-YUS1/800/f',
-        'mileage': '9624',
+        'mileage': 9624,
         'make': 'Citroen',
         'model': 'C3 Picasso',
         'registration': 'SY16ZHD',

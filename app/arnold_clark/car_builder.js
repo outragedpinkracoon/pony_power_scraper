@@ -20,11 +20,11 @@ const build = ($, carUrl) => {
       engineSize: engineSize($),
       fuel: productSummary($, 'Fuel'),
       fuelTankCapacity: fuelTankCapacity($),
-      mpg: productSummary($, 'MPG (combined)')
+      mpg: mpg($)
     },
     imageUrl: image($),
     make: videoDataTable($, 'Make'),
-    mileage: productSummary($, 'Mileage'),
+    mileage: mileage($),
     model: videoDataTable($, 'Model'),
     registration: registration($),
     seats: seats($),
@@ -87,9 +87,23 @@ const maxTowingWeightUnbraked = ($) => {
   return defaultToZero(parsed)
 }
 
+const mileage = ($) => {
+  parsed = parseFloat(
+    productSummary($, 'Mileage')
+  )
+  return defaultToZero(parsed)
+}
+
 const minimumKerbWeight = ($) => {
   parsed = parseInt(
     techSpecs($, 'Minimum Kerbweight')
+  )
+  return defaultToZero(parsed)
+}
+
+const mpg = ($) => {
+  parsed = parseFloat(
+    productSummary($, 'MPG (combined)')
   )
   return defaultToZero(parsed)
 }
