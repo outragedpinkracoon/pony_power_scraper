@@ -15,56 +15,41 @@ const build = ($, carUrl) => {
       roadTax: roadTax($)
     },
     engine: {
-      acceleration: acceleration($),
-      breakHorsePower: breakHorsePower($),
+      acceleration: asIntValueOrZero($, techSpecs, '0 to 62 mph (secs)'),
+      breakHorsePower: asIntValueOrZero($, techSpecs, 'Engine Power - BHP'),
       engineSize: engineSize($),
       fuel: productSummary($, 'Fuel'),
-      fuelTankCapacity: fuelTankCapacity($),
-      mpg: mpg($)
+      fuelTankCapacity: asIntValueOrZero($, techSpecs, 'Fuel Tank Capacity (Litres)'),
+      mpg: asFloatValueOrZero($, productSummary, 'MPG (combined)')
     },
     imageUrl: image($),
     make: videoDataTable($, 'Make'),
-    mileage: mileage($),
+    mileage: asIntValueOrZero($, productSummary, 'Mileage'),
     model: videoDataTable($, 'Model'),
     registration: registration($),
-    seats: seats($),
+    seats: asIntValueOrZero($, productSummary, 'Seats'),
     towing: {
-      maxTowingWeightBraked: maxTowingWeightBraked($),
-      maxTowingWeightUnbraked: maxTowingWeightUnbraked($),
-      minimumKerbWeight: minimumKerbWeight($),
+      maxTowingWeightBraked: asIntValueOrZero($, techSpecs, 'Max. Towing Weight - Braked'),
+      maxTowingWeightUnbraked: asIntValueOrZero($, techSpecs, 'Max. Towing Weight - Unbraked'),
+      minimumKerbWeight: asIntValueOrZero($, techSpecs, 'Minimum Kerbweight'),
     },
-    turningCircle: turningCircle($),
-    year: year($)
+    turningCircle: asIntValueOrZero($, techSpecs, 'Turning Circle - Kerb to Kerb'),
+    year: asIntValueOrZero($, productSummary, 'Year'),
   }
 }
 
-const breakHorsePower = ($) => {
-  return parseInt(
-    techSpecs($, 'Engine Power - BHP')
-  )
-}
-
-const acceleration = ($) => {
-  return parseInt(
-    techSpecs($, '0 to 62 mph (secs)')
-  )
-}
-
 const engineSize = ($) => {
-  engineCC = parseFloat(
-    productSummary($, 'Engine').replace('cc', '')
+  engineCC = defaultToZero(
+    parseFloat(
+      productSummary($, 'Engine').replace('cc', '')
+    )
   )
+  if (engineCC == 0) return 0
 
-  engineLitres = engineCC / 1000
+  engineLitres = engineCC / 1000.00
 
   return parseFloat(
     engineLitres.toFixed(2)
-  )
-}
-
-const fuelTankCapacity = () => {
-  return parseInt(
-    techSpecs($, 'Fuel Tank Capacity (Litres)')
   )
 }
 
@@ -72,38 +57,16 @@ const image = ($) => {
   return $('.ac-imagethumbnail img').first().attr('src')
 }
 
-const maxTowingWeightBraked = ($) => {
+const asIntValueOrZero = ($, section, term) => {
   parsed = parseInt(
-    techSpecs($, 'Max. Towing Weight - Braked')
+    section($, term)
   )
   return defaultToZero(parsed)
 }
 
-const maxTowingWeightUnbraked = ($) => {
-  parsed = parseInt(
-    techSpecs($, 'Max. Towing Weight - Unbraked')
-  )
-  // TODO: Keep an eye out for a car to VCR for this to test!
-  return defaultToZero(parsed)
-}
-
-const mileage = ($) => {
+const asFloatValueOrZero = ($, section, term) => {
   parsed = parseFloat(
-    productSummary($, 'Mileage')
-  )
-  return defaultToZero(parsed)
-}
-
-const minimumKerbWeight = ($) => {
-  parsed = parseInt(
-    techSpecs($, 'Minimum Kerbweight')
-  )
-  return defaultToZero(parsed)
-}
-
-const mpg = ($) => {
-  parsed = parseFloat(
-    productSummary($, 'MPG (combined)')
+    section($, term)
   )
   return defaultToZero(parsed)
 }
@@ -127,24 +90,6 @@ const roadTax = ($) => {
       .replace('£', '')
   )
   return defaultToZero(parsed)
-}
-
-const seats = ($) => {
-  return parseInt(
-    productSummary($, 'Seats')
-  )
-}
-
-const turningCircle = ($) => {
-  return parseInt(
-    techSpecs($, 'Turning Circle - Kerb to Kerb')
-  )
-}
-
-const year = ($) => {
-  return parseInt(
-    productSummary($, 'Year')
-  )
 }
 
 const defaultToZero = (value) => {
