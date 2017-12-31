@@ -1,12 +1,10 @@
 {
-  "name": "pony_power",
+  "name": "pony_power_scraper",
   "version": "0.0.1",
-  "description": "Scraper to get car data",
+  "description": "Scraper for Arnold Clark website",
   "main": "/app/main.js",
   "repository": "github.com/outragedpinkracoon/pony_power_scraper",
   "author": "Valerie Dryden",
-  "license": "MIT",
-  "private": false,
   "devDependencies": {
     "chai": "^4.1.2",
     "eslint": "^4.12.0",

@@ -11,33 +11,41 @@ const {
 } = require('./arnold_clark/repository')
 
 const run = async () => {
-  scrapeCars('Used%20Cars', 'used')
-  scrapeCars('Nearly%20New%20Cars', 'nearly-new')
+  scrapeRun('Used%20Cars', 'used')
+  scrapeRun('Nearly%20New%20Cars', 'nearly-new')
 }
 
-const scrapeCars = async (searchType, scrapeType) => {
+const runTotals = async (searchType) => {
   const firstPage = await carLinks.scrape(searchType, 1)
-  const scrapeRunId = await saveScrapeRun(scrapeType)
-  if (scrapeRunId == null) {
-    return
+  return {
+    pages: firstPage.total_pages,
+    cars: firstPage.total_cars
   }
-  for (let page = 1; page <= firstPage.total_pages; page++) {
+}
+
+const scrapeRun = async (searchType, scrapeType) => {
+  const totals = await runTotals(searchType)
+  const scrapeRunId = await saveScrapeRun(scrapeType)
+
+  await scrapeCars(totals, scrapeRunId, searchType)
+  finishScrapeRun(scrapeRunId)
+}
+
+const scrapeCars = async (total, scrapeRunId, searchType) => {
+  for (let page = 1; page <= total.pages; page++) {
     console.log('scraping page', page)
-    const data = await carLinks.scrape(searchType, firstPage.total_cars, page)
+    const data = await carLinks.scrape(searchType, total.cars, page)
     data.car_data.forEach((carUrl) => {
       processCar(carUrl, scrapeRunId)
     })
   }
-  finishScrapeRun(scrapeRunId)
 }
 
 const processCar = async (carUrl, scrapeRunId) => {
   try {
     const car = await scrapedCar.retrieve(carUrl)
-    console.log('saving scraped car')
     saveSuccessfulCar(car, scrapeRunId)
   } catch (error) {
-    console.log('saving failed car')
     let message = error
     if (error.statusCode == 404) {
       message = `Status code: ${error.statusCode}, Error type: ${error.name}`

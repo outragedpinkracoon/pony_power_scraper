@@ -1,6 +1,2 @@
 Must Fix
-	☐ Move database functions to another file
-
-Features
-	☐ Scrape multiple pages
-	☐ Store results from multiple pages in db
+	☐ Need some tests around main - will require test db set up etc

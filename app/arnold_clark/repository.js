@@ -7,26 +7,27 @@ const saveSuccessfulCar = async (car, scrapeRunId) => {
   try {
     const carAttributes = JSON.stringify(car)
     const query = `INSERT INTO scraped_car
-                (car_attributes, scrape_run_id)
-                VALUES ('${carAttributes}', '${scrapeRunId}')`
+                   (car_attributes, scrape_run_id)
+                   VALUES ('${carAttributes}', '${scrapeRunId}')`
     await client.query(query)
   } catch (error) {
-    console.error('successfully scraped car not saved', car.carUrl)
+    throw error
   } finally {
     await client.end()
   }
 }
+
 const saveFailedCar = async (carUrl, scrapeRunId, errorMessage) => {
   const client = new Client()
 
   await client.connect()
   try {
     const query = `INSERT INTO failed_car
-                  (car_url, scrape_run_id, error_message)
-                  VALUES ('${carUrl}', '${scrapeRunId}', '${errorMessage}')`
+                   (car_url, scrape_run_id, error_message)
+                   VALUES ('${carUrl}', '${scrapeRunId}', '${errorMessage}')`
     await client.query(query)
   } catch (error) {
-    console.error('failed car not saved', error)
+    throw error
   } finally {
     await client.end()
   }
@@ -38,13 +39,12 @@ const saveScrapeRun = async (scrapeType) => {
   await client.connect()
   try {
     const query = `INSERT INTO scrape_run
-                (scrape_type)
-                VALUES ('${scrapeType}') returning id`
+                   (scrape_type)
+                   VALUES ('${scrapeType}') returning id`
     const res = await client.query(query)
     return res.rows[0].id
   } catch (error) {
-    console.error('scrape run not saved')
-    return null
+    throw error
   } finally {
     await client.end()
   }
@@ -60,7 +60,7 @@ const finishScrapeRun = async (scrapeRunId) => {
                    WHERE id = ${scrapeRunId}`
     await client.query(query)
   } catch (error) {
-    console.error(error)
+    throw error
   } finally {
     await client.end()
   }
