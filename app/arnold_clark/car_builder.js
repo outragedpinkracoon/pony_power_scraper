@@ -9,7 +9,7 @@ const build = ($, carUrl, scrapeType) => {
   const attributes = attributesFromHtml($)
 
   attributes.carUrl = carUrl
-  attributes.slug = slugify(attributes.make)
+  attributes.makeSlug = slugify(attributes.make)
   attributes.searchType = scrapeType
 
   return attributes

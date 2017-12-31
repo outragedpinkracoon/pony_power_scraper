@@ -32,7 +32,7 @@ describe('scraped car', function() {
         'registration': 'SY16ZHD',
         'seats': 5,
         'searchType': 'used',
-        'slug': 'citroen',
+        'makeSlug': 'citroen',
         'turningCircle': 10,
         'year': 2016,
         'towing': {
