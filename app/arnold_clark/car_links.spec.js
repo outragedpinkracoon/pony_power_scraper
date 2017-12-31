@@ -6,7 +6,7 @@ const expect = chai.expect
 
 const carLinks = require('./car_links')
 
-describe('Car Links', function() {
+describe('car links', function() {
   describe('Scraping used cars', function() {
     it('should return a list of 5 used car urls', async function() {
       const expectedResults = [
@@ -22,7 +22,7 @@ describe('Car Links', function() {
     })
   })
 
-  describe('Scraping nearly new cars', function() {
+  describe('scraping nearly new cars', function() {
     it('should return a list of 5 nearly new car urls', async function() {
       const expectedResults = [
         'https://www.arnoldclark.com/nearly-new-cars/dacia/sandero/1-5-dci-ambiance-5dr/2017/ref/arnew-u-13527',
@@ -37,14 +37,14 @@ describe('Car Links', function() {
     })
   })
 
-  describe('Returning the total pages', function() {
+  describe('returning the total pages', function() {
     it('should return the correct number of total pages', async function() {
       const result = await carLinks.scrape('Nearly%20New%20Cars', 1)
       expect(result.total_pages).to.eq(5)
     })
   })
 
-  describe('Returning the current page', function() {
+  describe('returning the current page', function() {
     describe('when no page is given', function() {
       it('should return the first page', async function() {
         const result = await carLinks.scrape('Nearly%20New%20Cars', 1)
@@ -60,7 +60,7 @@ describe('Car Links', function() {
     })
   })
 
-  describe('Returning the total number of cars on a page', function() {
+  describe('returning the total number of cars on a page', function() {
     describe('when no page is given', function() {
       it('should return the first page', async function() {
         const result = await carLinks.scrape('Nearly%20New%20Cars', 1)
@@ -76,7 +76,7 @@ describe('Car Links', function() {
     })
   })
 
-  describe('Calculating the number of cars to return', function() {
+  describe('calculating the number of cars to return', function() {
     describe('when cars available are more than cars requested', function() {
       it('returns the requested number of cars', async function() {
         const result = await carLinks.scrape('Nearly%20New%20Cars', 5, 1)

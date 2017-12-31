@@ -5,7 +5,7 @@ const expect = chai.expect
 
 const scrapedCar = require('./scraped_car')
 
-describe('Scraped Car', function() {
+describe('scraped car', function() {
   describe('#retrieve()', function() {
     it('returns the correct car details', async function() {
       const url = 'https://www.arnoldclark.com/used-cars/citroen/c3-picasso/1-6-bluehdi-edition-5dr/2016/ref/arnez-u-13815'
