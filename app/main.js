@@ -15,35 +15,25 @@ const run = async () => {
   scrapeRun('Nearly%20New%20Cars', 'nearly-new')
 }
 
-const runTotals = async (searchType) => {
-  const firstPage = await carLinks.scrape(searchType, 1)
-  return {
-    pages: firstPage.total_pages,
-    cars: firstPage.total_cars
-  }
-}
-
-const scrapeRun = async (searchType, scrapeType) => {
-  const totals = await runTotals(searchType)
+const scrapeRun = async (searchTypeParam, scrapeType) => {
+  const totals = await runTotals(searchTypeParam)
   const scrapeRunId = await saveScrapeRun(scrapeType)
-
-  await scrapeCars(totals, scrapeRunId, searchType)
+  await scrapeCars(totals, scrapeRunId, searchTypeParam, scrapeType)
   finishScrapeRun(scrapeRunId)
 }
 
-const scrapeCars = async (total, scrapeRunId, searchType) => {
+const scrapeCars = async (total, scrapeRunId, searchTypeParam, scrapeType) => {
   for (let page = 1; page <= total.pages; page++) {
-    console.log('scraping page', page)
-    const data = await carLinks.scrape(searchType, total.cars, page)
+    const data = await carLinks.scrape(searchTypeParam, total.cars, page)
     data.car_data.forEach((carUrl) => {
-      processCar(carUrl, scrapeRunId)
+      processCar(carUrl, scrapeRunId, scrapeType)
     })
   }
 }
 
-const processCar = async (carUrl, scrapeRunId) => {
+const processCar = async (carUrl, scrapeRunId, scrapeType) => {
   try {
-    const car = await scrapedCar.retrieve(carUrl)
+    const car = await scrapedCar.retrieve(carUrl, scrapeType)
     saveSuccessfulCar(car, scrapeRunId)
   } catch (error) {
     let message = error
@@ -51,6 +41,14 @@ const processCar = async (carUrl, scrapeRunId) => {
       message = `Status code: ${error.statusCode}, Error type: ${error.name}`
     }
     saveFailedCar(carUrl, scrapeRunId, message)
+  }
+}
+
+const runTotals = async (searchTypeParam) => {
+  const firstPage = await carLinks.scrape(searchTypeParam, 1)
+  return {
+    pages: firstPage.total_pages,
+    cars: firstPage.total_cars
   }
 }
 

@@ -5,10 +5,19 @@ const {
   videoDataTable
 } = require('./car_page_sections')
 
-const build = ($, carUrl) => {
+const build = ($, carUrl, scrapeType) => {
+  const attributes = attributesFromHtml($)
+
+  attributes.carUrl = carUrl
+  attributes.slug = slugify(attributes.make)
+  attributes.searchType = scrapeType
+
+  return attributes
+}
+
+const attributesFromHtml = ($) => {
   return {
     bodyType: videoDataTable($, 'Body Type'),
-    carUrl: carUrl,
     colour: productSummary($, 'Colour'),
     cost: {
       price: price($),
@@ -57,20 +66,6 @@ const image = ($) => {
   return $('.ac-imagethumbnail img').first().attr('src')
 }
 
-const asIntValueOrZero = ($, section, term) => {
-  parsed = parseInt(
-    section($, term)
-  )
-  return defaultToZero(parsed)
-}
-
-const asFloatValueOrZero = ($, section, term) => {
-  parsed = parseFloat(
-    section($, term)
-  )
-  return defaultToZero(parsed)
-}
-
 const price = ($) => {
   let price = $('.ac-money').first().text()
   return parseInt(
@@ -92,8 +87,26 @@ const roadTax = ($) => {
   return defaultToZero(parsed)
 }
 
+const asIntValueOrZero = ($, section, term) => {
+  parsed = parseInt(
+    section($, term)
+  )
+  return defaultToZero(parsed)
+}
+
+const asFloatValueOrZero = ($, section, term) => {
+  parsed = parseFloat(
+    section($, term)
+  )
+  return defaultToZero(parsed)
+}
+
 const defaultToZero = (value) => {
   return isNaN(value) ? 0 : value
+}
+
+const slugify = (make) => {
+  return make.toLowerCase().replace(' ', '-')
 }
 
 module.exports = {

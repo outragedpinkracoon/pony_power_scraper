@@ -31,6 +31,8 @@ describe('scraped car', function() {
         'model': 'C3 Picasso',
         'registration': 'SY16ZHD',
         'seats': 5,
+        'searchType': 'used',
+        'slug': 'citroen',
         'turningCircle': 10,
         'year': 2016,
         'towing': {
@@ -39,7 +41,7 @@ describe('scraped car', function() {
           'minimumKerbWeight': 1420,
         }
       }
-      let result = await scrapedCar.retrieve(url)
+      let result = await scrapedCar.retrieve(url, 'used')
       expect(result).to.deep.eq(expectedCarData)
     })
 
