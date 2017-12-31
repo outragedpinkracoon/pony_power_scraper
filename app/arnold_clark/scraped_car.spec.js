@@ -18,6 +18,7 @@ describe('scraped car', function() {
           'roadTax': 20
         },
         'engine': {
+          'acceleration': 13,
           'breakHorsePower': 100,
           'engineSize': 1.56,
           'fuelTankCapacity': 50,

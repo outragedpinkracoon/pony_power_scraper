@@ -15,11 +15,12 @@ const build = ($, carUrl) => {
       roadTax: roadTax($)
     },
     engine: {
+      acceleration: acceleration($),
+      breakHorsePower: breakHorsePower($),
       engineSize: engineSize($),
-      mpg: productSummary($, 'MPG (combined)'),
       fuel: productSummary($, 'Fuel'),
       fuelTankCapacity: fuelTankCapacity($),
-      breakHorsePower: breakHorsePower($)
+      mpg: productSummary($, 'MPG (combined)')
     },
     imageUrl: image($),
     make: videoDataTable($, 'Make'),
@@ -40,6 +41,12 @@ const build = ($, carUrl) => {
 const breakHorsePower = ($) => {
   return parseInt(
     techSpecs($, 'Engine Power - BHP')
+  )
+}
+
+const acceleration = ($) => {
+  return parseInt(
+    techSpecs($, '0 to 62 mph (secs)')
   )
 }
 
