@@ -42,7 +42,7 @@ const attributesFromHtml = ($) => {
       maxTowingWeightUnbraked: asIntValueOrZero($, techSpecs, 'Max. Towing Weight - Unbraked'),
       minimumKerbWeight: asIntValueOrZero($, techSpecs, 'Minimum Kerbweight'),
     },
-    turningCircle: asIntValueOrZero($, techSpecs, 'Turning Circle - Kerb to Kerb'),
+    turningCircle: asFloatValueOrZero($, techSpecs, 'Turning Circle - Kerb to Kerb'),
     year: asIntValueOrZero($, productSummary, 'Year'),
   }
 }

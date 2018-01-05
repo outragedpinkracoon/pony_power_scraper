@@ -33,7 +33,7 @@ describe('scraped car', function() {
         'seats': 5,
         'searchType': 'used',
         'makeSlug': 'citroen',
-        'turningCircle': 10,
+        'turningCircle': 10.6,
         'year': 2016,
         'towing': {
           'maxTowingWeightBraked': 900,

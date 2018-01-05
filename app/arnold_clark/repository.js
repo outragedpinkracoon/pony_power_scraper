@@ -7,7 +7,7 @@ const saveSuccessfulCar = async (car, scrapeRunId) => {
   try {
     const carAttributes = JSON.stringify(car)
     const query = `INSERT INTO scraped_car
-                   (car_attributes, scrape_run_id)
+                   (attributes, scrape_run_id)
                    VALUES ('${carAttributes}', '${scrapeRunId}')`
     await client.query(query)
   } catch (error) {

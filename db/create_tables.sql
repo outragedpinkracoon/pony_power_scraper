@@ -13,7 +13,7 @@ CREATE TABLE scrape_run (
 );
 
 CREATE TABLE scraped_car (
-    car_attributes jsonb,
+    attributes jsonb,
     scrape_run_id int8 references scrape_run(id)
 );
 
